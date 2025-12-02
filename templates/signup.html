@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - JobBridge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+<body class="signup-page">
+    <div class="signup-container">
+        <div class="signup-modal">
+            <div class="signup-image">
+                <img src="{{ url_for('static', filename='images/forest.jpg') }}" alt="Nature">
+                <div class="image-overlay">
+                    <h2>Jimon</h2>
+                </div>
+            </div>
+            
+            <div class="signup-form-section">
+                <h1 class="form-title">create an account</h1>
+                <p class="form-subtitle">already have an account? <a href="/login">login</a></p>
+                
+                <form class="signup-form" method="POST" action="/api/signup">
+                    <div class="form-row">
+                        <input type="text" name="first_name" placeholder="first name" required>
+                        <input type="text" name="last_name" placeholder="last name" required>
+                    </div>
+                    
+                    <input type="email" name="email" placeholder="email" required>
+                    <input type="password" name="password" placeholder="enter your password" required>
+                    
+                    <button type="submit" class="btn-create-account">create an account</button>
+                </form>
+                
+                <div class="divider">or</div>
+                
+                <div class="social-login">
+                    <button class="social-btn facebook">
+                        <span class="icon">f</span>
+                    </button>
+                    <button class="social-btn google">
+                        <span class="icon">G</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

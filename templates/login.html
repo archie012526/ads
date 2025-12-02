@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - JobBridge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-modal">
+            <div class="login-image">
+                <img src="{{ url_for('static', filename='images/forest.jpg') }}" alt="Forest">
+                <div class="image-overlay">
+                    <h2>Jimon</h2>
+                </div>
+            </div>
+            
+            <div class="login-form-section">
+                <h1 class="form-title">welcome back</h1>
+                <p class="form-subtitle">enter your details below</p>
+                
+                <form class="login-form" method="POST" action="/api/login">
+                    <input type="email" name="email" placeholder="enter your email" required>
+                    <input type="password" name="password" placeholder="enter your password" required>
+                    
+                    <button type="submit" class="btn-login">login</button>
+                </form>
+                
+                <a href="#forgot-password" class="forgot-password">forgot password?</a>
+                
+                <div class="divider">or</div>
+                
+                <div class="social-login">
+                    <button type="button" class="social-btn facebook" title="Login with Facebook">
+                        <span class="icon">f</span>
+                    </button>
+                    <button type="button" class="social-btn google" title="Login with Google">
+                        <span class="icon">G</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
